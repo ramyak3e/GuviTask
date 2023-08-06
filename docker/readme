@@ -19,3 +19,6 @@ docker build -t myimg:10 .
 docker run -d --name mycontainername -v myvol:/data -p 1001:80 myimg:10
 
 --This will create container,volume and port will be allocated
+
+
+Same has been updated in Docker hub
