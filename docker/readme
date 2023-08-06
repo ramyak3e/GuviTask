@@ -1,0 +1,21 @@
+
+Docker Image:
+
+Need to create a Docker file and convert that as Docker image
+
+vi Dockerfile
+FROM ubuntu
+RUN apt update
+RUN apt install nginx
+COPY index.html /home/ubuntu
+CMD ["nginx","-g","daemon off;"]
+
+Need create a index.html file and added Welcome! messgae 
+
+docker pull nginx:latest
+
+docker build -t myimg:10 .
+
+docker run -d --name mycontainername -v myvol:/data -p 1001:80 myimg:10
+
+--This will create container,volume and port will be allocated
