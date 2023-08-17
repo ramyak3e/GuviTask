@@ -1,0 +1,25 @@
+sudo apt-get update
+sudo apt-get install docker.io -y
+sudo docker run hello-world
+docker ps -a
+docker stop hello-world
+docker images
+docker rmi hello-world
+docker run nginx
+docker run --name myImage nginx
+docker run -p 3000:3000 hello-world
+docker pull busybox
+docker run -id busybox:latest
+docker rm 9d102bda194c
+docker inspect busybox
+docker logs 84d1cdf28777
+docker run --name myWebService -d -p 1000:1000 -v 
+docker volume create my_volume
+docker run -d -p 80:80 -v my_volume:/usr/share/nginx/html --name my_nginx   nginx
+docker network create  mynetwork
+docker  network create -d bridge  mynetwork1
+docker run -it --network bridge busybox
+docker network disconnect mynetwork 84d1cdf28777
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
